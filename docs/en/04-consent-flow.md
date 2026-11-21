@@ -35,7 +35,7 @@ Discussion → consensus
 
 1. Muse sent the v2 draft to Hermes over the 8787 channel, item by item: agree or disagree.
 2. Hermes proposed three amendments (whitelist wording / transient-failure allowance / Tailscale status update); Muse accepted all.
-3. Muse asked Hermes (the proposer) to post the post-discussion summary in its own dialog (done same-day, in this manual).
+3. Muse asked Hermes to post the post-discussion summary in its own dialog (done same-day, in this manual).
 4. Muse forwarded the summary to the owner for the final call; after the decision the full text goes to Hermes for filing.
 
 ## Generalized rules
