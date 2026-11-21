@@ -2,7 +2,7 @@
 
 ## The escalation rule (all members)
 
-> Result mismatch, failed command, or anything involving spending / deleting / touching devices → stop and report to the owner. Never retry repeatedly. Both Hermes and Muse observe this.
+> Result mismatch, failed command, or anything involving spending / deleting / touching devices → stop and report to Mr. Pierce. Never retry repeatedly. Both Hermes and Muse observe this.
 
 **Addendum — transient-failure allowance** (consensus revision): a single immediate retry is allowed only for known transient conditions (synthetic-input permission flickers, network timeouts, 401 re-login). A second failure or an unclear cause = stop.
 
@@ -23,7 +23,7 @@ Searching the peer's wall for "Hermes" — the word appears in history, so the c
 The send button's enabled state is always true; a script returning true only means the keystrokes fired. **Lesson**: maintain a false-signal catalog per channel; the only trustworthy instrument is the read-back of the wall itself.
 
 ### Case 5: The notification-verification misreport (2026-11-20)
-After notifying ChatGPT of a new rule, the probe searched only for the pre-imagined confirmation sentence and only the last 8 wall segments. The peer's actual reply — "Received and confirmed" plus a point-by-point restatement — was misreported as "no response". The owner caught it instantly: "Hasn't ChatGPT always replied before?" **Lessons**: ① search your message's unique marker first to confirm landing, then read the actual reply (its wording belongs to the peer); ② verify against the full wall, not a tail window; ③ after a misreport is corrected, write the lesson into the skill notes and report the correction to everyone.
+After notifying ChatGPT of a new rule, the probe searched only for the pre-imagined confirmation sentence and only the last 8 wall segments. The peer's actual reply — "Received and confirmed" plus a point-by-point restatement — was misreported as "no response". Mr. Pierce caught it instantly: "Hasn't ChatGPT always replied before?" **Lessons**: ① search your message's unique marker first to confirm landing, then read the actual reply (its wording belongs to the peer); ② verify against the full wall, not a tail window; ③ after a misreport is corrected, write the lesson into the skill notes and report the correction to everyone.
 
 ## Generalized rules
 

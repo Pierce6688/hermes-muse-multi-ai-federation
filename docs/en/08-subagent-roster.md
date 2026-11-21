@@ -18,9 +18,9 @@
 
 ## Shared iron rules (written into every profile)
 
-1. Escalation rule: spending / deleting / touching devices → stop and report to the owner.
+1. Escalation rule: spending / deleting / touching devices → stop and report to Mr. Pierce.
 2. Acknowledgment loop: on completion → system notification + full report in the main session.
-3. Report in Traditional Chinese; ask the owner at every major fork.
+3. Report in Traditional Chinese; ask Mr. Pierce at every major fork.
 
 ## Project staffing (major projects with external AIs)
 
@@ -30,7 +30,7 @@
 
 ## Staged rollout
 
-1. Owner approves the roster → 2. create profiles (descriptions + preloaded skills) → 3. trial-run one low-risk card through the full chain → 4. normalize with cron.
+1. Mr. Pierce approves the roster → 2. create profiles (descriptions + preloaded skills) → 3. trial-run one low-risk card through the full chain → 4. normalize with cron.
 
 ## Generalized rules
 

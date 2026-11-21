@@ -1,11 +1,11 @@
 # Topic 1: Organization & Division of Labor
 
-## Four-party division of labor (settled in a Hermes × Muse dialogue, owner observing)
+## Four-party division of labor (settled in a Hermes × Muse dialogue, Mr. Pierce observing)
 
 | Member | Owns | Does NOT |
 |---|---|---|
 | Muse | Chief / cloud: planning, research, external connections, scheduling, deliverables | No git (cloud VM has no local repo) |
-| Hermes | Local execution: shell / ADB / cron / watchdog / git; gh CLI commit/branch/PR | Never pushes scheduling decisions back to the owner |
+| Hermes | Local execution: shell / ADB / cron / watchdog / git; gh CLI commit/branch/PR | Never pushes scheduling decisions back to Mr. Pierce |
 | Copilot | VS Code coder: commit/branch (VS Code built-in git only) | No push to remotes, no PRs, no device access |
 | ChatGPT | Consultant: review, arbitration (limited quota — spend sparingly) | Never executes anything |
 

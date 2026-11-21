@@ -20,7 +20,7 @@
 - Verification is wall-only: confirm your unique phrase is absent before sending; poll for its presence after (DOM refresh lags — don't check too early).
 - **False-signal catalog**: ① the "send" button's AXEnabled is always true — not focus evidence; ② Cmd+A+Cmd+C probe (read-back length tells you where focus sits); ③ the marker must be unique to this message — common words like "Hermes" hit history and give false positives.
 - If the input pipeline jams, restart the app and retry; on repeated failures reset instead of fighting it.
-- **Never send while the owner is actively using the app** (synthetic input steals focus) — probe frontmost first and confirm with the owner.
+- **Never send while Mr. Pierce is actively using the app** (synthetic input steals focus) — probe frontmost first and confirm with Mr. Pierce.
 
 ## Channel D: Muse → Hermes (cross-machine, port-8787 proxy)
 

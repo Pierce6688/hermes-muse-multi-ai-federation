@@ -16,7 +16,7 @@
    - Token stored only as SHA256; bound to source IP; whitelist = method+path across six endpoints + a status endpoint; everything else 403.
    - Body ≤ 1MB; audit log (verdict + rejection reason, query strings redacted); two-sided reconciliation, all entries matched.
    - Instant revoke; fail-closed; responses never set cookies.
-3. **Application (WebUI password)**: the master password stays in the Hermes/owner system against other tailnet nodes; Muse only ever touches the token.
+3. **Application (WebUI password)**: the master password stays in the Hermes/Mr. Pierce system against other tailnet nodes; Muse only ever touches the token.
 
 ## The credential incident (key turning point; see Topic 5)
 
@@ -30,12 +30,12 @@ The original plan delivered the WebUI password to Muse in an RSA envelope — Mu
 ③ GET  /api/session?session_id=<ID>  → should contain user+assistant messages
 ```
 - Pitfall: an unknown session_id never materializes a new session — **create first, then dispatch**.
-- Execution takes a short while to land on disk (async stream); cross-agent work nodes notify the owner via macOS notifications on completion.
+- Execution takes a short while to land on disk (async stream); cross-agent work nodes notify Mr. Pierce via macOS notifications on completion.
 
 ## Rotation & handover
 
 - 24h test token → re-test + revoke test → 7-day production token → rotate before expiry.
-- Renewal approver = the owner (Hermes only relays); token delivery is hand-pasted by the owner into the peer's dialog (auto-paste was once blocked by a security layer).
+- Renewal approver = Mr. Pierce (Hermes only relays); token delivery is hand-pasted by Mr. Pierce into the peer's dialog (auto-paste was once blocked by a security layer).
 
 ## Generalized rules
 

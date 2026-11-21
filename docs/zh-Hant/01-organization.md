@@ -1,11 +1,11 @@
 # 主題 1：組織架構與分工
 
-## 四方分工共識（Hermes × Muse 對談定稿，主人授權旁觀）
+## 四方分工共識（Hermes × Muse 對談定稿，皮爾斯先生授權旁觀）
 
 | 成員 | 職掌 | 不做的事 |
 |---|---|---|
 | Muse | Chief／雲端：規劃、研究、對外連接、排程、成品交付 | 不碰 git（雲端 VM 無本機 repo） |
-| Hermes | 本機執行：shell／ADB／cron／watchdog／git 全管；gh CLI 的 commit／branch／PR 歸 Hermes | 不把調度決策推回主人 |
+| Hermes | 本機執行：shell／ADB／cron／watchdog／git 全管；gh CLI 的 commit／branch／PR 歸 Hermes | 不把調度決策推回皮爾斯先生 |
 | Copilot | VS Code 寫碼手：commit／branch（僅限 VS Code 內建 git） | 不 push remote、不開 PR、不碰設備 |
 | ChatGPT | 顧問：審查、仲裁（額度有限，省著用） | 不執行任何東西 |
 
