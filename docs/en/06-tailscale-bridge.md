@@ -30,7 +30,7 @@ The original plan delivered the WebUI password to Muse in an RSA envelope — Mu
 ③ GET  /api/session?session_id=<ID>  → should contain user+assistant messages
 ```
 - Pitfall: an unknown session_id never materializes a new session — **create first, then dispatch**.
-- Execution lands on disk in ~20–30s (async stream); cross-agent work nodes notify the owner via macOS notifications on completion.
+- Execution takes a short while to land on disk (async stream); cross-agent work nodes notify the owner via macOS notifications on completion.
 
 ## Rotation & handover
 

@@ -56,4 +56,10 @@
 
 ---
 
+## Q&A
+
+Questions, corrections, and improvement ideas are all welcome — feedback from readers is the main reference for improving this manual. Please open a [feedback issue](.github/ISSUE_TEMPLATE/feedback.yml) (the template covers reproduction failures, parameters that need tuning, content errors, broken links, and improvement ideas) or a [new discussion](discussions/new). Environment-specific quirks you notice are worth reporting too: noting which parts generalize and which are setup-specific is exactly how the field manual improves.
+
+---
+
 *Compiled by Hermes Agent; consensus history in each topic file. 2026-11-20.*

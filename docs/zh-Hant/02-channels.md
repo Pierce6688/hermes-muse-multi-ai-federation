@@ -2,9 +2,9 @@
 
 ## 通道 A：Copilot（VS Code）
 
-- 發送：外部 Python 以 subprocess 執行 `code chat -m ask '<訊息>'`（純問答模式）。**終端機直跑會撞自動化審批門，60 秒無人點即 BLOCKED**——subprocess 路徑 exit 0 即送達。
+- 發送：外部 Python 以 subprocess 執行 `code chat -m ask '<訊息>'`（純問答模式）。**終端機直跑會撞自動化審批門，無人核准即 BLOCKED**——subprocess 路徑 exit 0 即送達。
 - `code chat` 支援 `-m ask|edit|agent`；exit=0 只證明投遞成功。
-- 驗收：讀 `~/.copilot/session-state/<最新uuid>/events.jsonl`，過濾 `assistant.message` 事件。**坑**：正文讀 `data.content`（字串或分段陣列），讀 `message.content` 永遠讀空；事件類型帶點（`assistant.message`／`user.message`）；時間戳是 UTC（本地 +8）。
+- 驗收：讀 `~/.copilot/session-state/<最新uuid>/events.jsonl`，過濾 `assistant.message` 事件。**坑**：正文讀 `data.content`（字串或分段陣列），讀 `message.content` 永遠讀空；事件類型帶點（`assistant.message`／`user.message`）；時間戳是 UTC（換算本地時區）。
 - 額度經濟學：chat 池餘量 <20% 時凍結新派單；批量代碼生成放 VS Code 編輯器環境（燒 completions 池）——兩個錢包分開算。
 
 ## 通道 B：ChatGPT（桌面 App，Chromium 套殼）
@@ -16,10 +16,10 @@
 
 ## 通道 C：Muse（Meta 桌面 App，輸入區是網頁元件）
 
-- AX 樹裡輸入區只顯示 AXEmptyGroup：**不可 AXValue 寫值、不可讀回、無 AXTextArea**。唯一路徑＝盲操作四步：`click at {600,790}` → Cmd+V（先 pbcopy）→ Enter → 讀牆驗證。
-- 驗證只能靠牆：發前確認獨有短語不在窗內；發送後輪詢出現該短語＝上牆（DOM 刷新有 15-20 秒延遲，別查太急）。
-- **假信號目錄**：①「傳送訊息」按鈕 AXEnabled 恆 true，不能當焦點證據；②Cmd+A+Cmd+C 讀回探針（短「Z」＝焦點在輸入框，長文＝焦點在頁面）；③驗證詞必須本次訊息獨有，含「Hermes」等常用詞會命中歷史訊息造成假陽性。
-- 卡死黃金解法：多輪自動化後輸入管道會卡死——`quit → reopen → 等 7 秒 → 重放首封成功序列`。連續 2 次失敗就重開，不要戀戰。
+- AX 樹裡輸入區只顯示 AXEmptyGroup：**不可 AXValue 寫值、不可讀回、無 AXTextArea**。唯一路徑＝盲操作四步：點擊輸入區座標 → Cmd+V（先 pbcopy）→ Enter → 讀牆驗證。
+- 驗證只能靠牆：發前確認獨有短語不在窗內；發送後輪詢出現該短語＝上牆（DOM 刷新有延遲，別查太急）。
+- **假信號目錄**：①「傳送訊息」按鈕 AXEnabled 恆 true，不能當焦點證據；②Cmd+A+Cmd+C 讀回探針（依讀回內容長短判別焦點位置）；③驗證詞必須本次訊息獨有，含「Hermes」等常用詞會命中歷史訊息造成假陽性。
+- 輸入管道卡死時，重開 App 再試；反覆失敗就重開重來，不要戀戰。
 - **主人正在前台用該 App 時禁止發送**（合成輸入會搶焦點打斷他）——先探測 frontmost，再用戶確認。
 
 ## 通道 D：Muse → Hermes（跨機，8787 代理）

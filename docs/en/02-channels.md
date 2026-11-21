@@ -2,9 +2,9 @@
 
 ## Channel A: Copilot (VS Code)
 
-- Send: subprocess `code chat -m ask '<msg>'` (Q&A mode) from an external Python process. **Running it directly in a terminal hits the automation approval gate — 60s with nobody clicking = BLOCKED.** The subprocess path exits 0 on delivery.
+- Send: subprocess `code chat -m ask '<msg>'` (Q&A mode) from an external Python process. **Running it directly in a terminal hits the automation approval gate — unapproved, it blocks.** The subprocess path exits 0 on delivery.
 - `code chat` supports `-m ask|edit|agent`; exit=0 only proves delivery.
-- Read-back: parse `~/.copilot/session-state/<latest-uuid>/events.jsonl`, filter `assistant.message` events. **Pitfalls**: the body is in `data.content` (string or segment array) — `message.content` is always empty; event types contain dots (`assistant.message`/`user.message`); timestamps are UTC (local +8).
+- Read-back: parse `~/.copilot/session-state/<latest-uuid>/events.jsonl`, filter `assistant.message` events. **Pitfalls**: the body is in `data.content` (string or segment array) — `message.content` is always empty; event types contain dots (`assistant.message`/`user.message`); timestamps are UTC (convert to your local zone).
 - Quota economics: freeze new dispatch when the chat pool drops below 20%; bulk code generation goes to the VS Code editor environment (completions pool) — two wallets, kept separate.
 
 ## Channel B: ChatGPT (desktop app, Chromium shell)
@@ -16,10 +16,10 @@
 
 ## Channel C: Muse (Meta desktop app; input area is a web component)
 
-- In the AX tree the input area is an AXEmptyGroup: **no AXValue writes, no read-back, no AXTextArea**. The only path is blind four-step automation: `click at {600,790}` → Cmd+V (pbcopy first) → Enter → verify on the wall.
-- Verification is wall-only: confirm your unique phrase is absent before sending; poll for its presence after (DOM refresh lags 15–20s — don't check too early).
-- **False-signal catalog**: ① the "send" button's AXEnabled is always true — not focus evidence; ② Cmd+A+Cmd+C probe (short "Z" = focus in input; long text = focus on page); ③ the marker must be unique to this message — common words like "Hermes" hit history and give false positives.
-- Stuck-pipe gold fix: after many automation rounds the input pipeline jams — `quit → reopen → wait 7s → replay the first successful sequence`. Two consecutive failures = reset, don't fight it.
+- In the AX tree the input area is an AXEmptyGroup: **no AXValue writes, no read-back, no AXTextArea**. The only path is blind four-step automation: click the input area's coordinates → Cmd+V (pbcopy first) → Enter → verify on the wall.
+- Verification is wall-only: confirm your unique phrase is absent before sending; poll for its presence after (DOM refresh lags — don't check too early).
+- **False-signal catalog**: ① the "send" button's AXEnabled is always true — not focus evidence; ② Cmd+A+Cmd+C probe (read-back length tells you where focus sits); ③ the marker must be unique to this message — common words like "Hermes" hit history and give false positives.
+- If the input pipeline jams, restart the app and retry; on repeated failures reset instead of fighting it.
 - **Never send while the owner is actively using the app** (synthetic input steals focus) — probe frontmost first and confirm with the owner.
 
 ## Channel D: Muse → Hermes (cross-machine, port-8787 proxy)

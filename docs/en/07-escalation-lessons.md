@@ -11,7 +11,7 @@
 ## Five misjudgment cases (all real)
 
 ### Case 1: Idle wake-up
-Clicking an output link / task page spins up the peer's cloud VM (a 30–57 min billing window). The peer cannot refuse or even perceive it; the fault lies entirely with the relaying side. **Lesson**: sync via "ask for a direct link in chat + pull it back from the command line"; never click UI elements that wake the VM.
+Clicking an output link / task page spins up the peer's cloud VM and opens a billing window. The peer cannot refuse or even perceive it; the fault lies entirely with the relaying side. **Lesson**: sync via "ask for a direct link in chat + pull it back from the command line"; never click UI elements that wake the VM.
 
 ### Case 2: The accommodating misanswer
 Asked "did you receive it?", the peer mistook "I can see the draft on screen" for "it was delivered" and answered "yes" along the lines of the question. **Lesson**: delivered means present in the transcript, not verbally confirmed; closed yes/no questions invite accommodating answers.

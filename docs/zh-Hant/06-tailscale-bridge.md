@@ -30,7 +30,7 @@
 ③ GET  /api/session?session_id=<ID>  → 應有 user+assistant 訊息
 ```
 - 坑：未知 session_id 不會自動物化新會話——**先建後派**。
-- 執行約 20-30 秒落盤（異步流）；跨 agent 工作節點完成時用 macOS 通知彈給主人。
+- 執行需稍候落盤（異步流）；跨 agent 工作節點完成時用 macOS 通知彈給主人。
 
 ## 輪換與交接
 
